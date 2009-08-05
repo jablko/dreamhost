@@ -1,0 +1,11 @@
+--- Makefile
++++ Makefile
+@@ -11,7 +11,7 @@
+ PYCXX=/home/epmclellan/trash/pysvn-1.7.0/Import/pycxx-5.5.0
+ PYCXXSRC=/home/epmclellan/trash/pysvn-1.7.0/Import/pycxx-5.5.0/Src
+ LDSHARED=g++ -shared 
+-LDLIBS=-L/home/epmclellan/lib -Wl,--rpath -Wl,/home/epmclellan/lib -lsvn_client-1 -lsvn_diff-1 -lsvn_repos-1 -lcom_err -lresolv -lexpat -lneon -lssl
++LDLIBS=-L/home/epmclellan/lib -Wl,--rpath -Wl,/home/epmclellan/lib -lsvn_client-1 -lsvn_diff-1 -lsvn_repos-1 -lresolv -lexpat
+ PYSVN_CREATE_INIT_OPTION=_pysvn_2_6.so
+ 
+ #include pysvn_common.mak
