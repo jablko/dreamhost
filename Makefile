@@ -79,7 +79,7 @@ subversion: apr-util neon
 	$(MAKE) -C subversion-1.6.3 install-swig-py
 
 	# Save username and password
-	svn info http://example.com/svn/hosting --username administrator --password example
+	svn info http://example.com/svn/hosting --username administrator --password example --non-interactive
 
 pysvn: python subversion
 	wget http://pysvn.barrys-emacs.org/source_kits/pysvn-1.7.0.tar.gz
