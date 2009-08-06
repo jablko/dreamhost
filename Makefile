@@ -86,7 +86,7 @@ pysvn: python subversion
 	tar xz < pysvn-1.7.0.tar.gz
 
 	(cd pysvn-1.7.0/Source && python setup.py configure --svn-inc-dir=$(HOME)/include/subversion-1 --apr-inc-dir=$(HOME)/include/apr-1 --svn-lib-dir=$(HOME)/lib --apr-lib-dir=$(HOME)/lib)
-	(cd pysvn-1.7.0/Source && patch -p0) < patches/pysvn
+	sed -i 's/ -lcom_err\| -lneon\| -lssl//g' pysvn-1.7.0/Source/Makefile
 
 	$(MAKE) -C pysvn-1.7.0/Source
 	mkdir -p $(HOME)/lib/python/pysvn
