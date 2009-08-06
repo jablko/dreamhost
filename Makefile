@@ -1,4 +1,6 @@
-all: php svn-load Twisted lxml ImageMagick ghostscript mysql
+PATH := $(HOME)/bin:$(PATH)
+
+all: home php svn-load Twisted lxml ImageMagick ghostscript mysql
 
 home:
 	(cd $(HOME) && patch -p0) < patches/home
@@ -6,9 +8,6 @@ home:
 	mkdir -m 700 $(HOME)/.ssh
 	cp authorized_keys $(HOME)/.ssh
 	chmod 644 $(HOME)/.ssh/authorized_keys
-
-	# Won't be added to $PATH unless it exists
-	mkdir $(HOME)/bin
 
 openldap:
 	wget ftp://ftp.openldap.org/pub/OpenLDAP/openldap-stable/openldap-stable-20090411.tgz
