@@ -27,6 +27,8 @@ php: openldap
 	$(MAKE) -C php-5.3.0
 	cp php-5.3.0/sapi/cli/php $(HOME)/bin
 
+        cp php.ini $(HOME)/lib
+
 python:
 	wget http://www.python.org/ftp/python/2.6.2/Python-2.6.2.tar.bz2
 	tar xj < Python-2.6.2.tar.bz2
