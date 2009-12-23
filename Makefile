@@ -22,7 +22,7 @@ php: openldap
 	wget http://php.net/distributions/php-5.3.0.tar.bz2
 	tar xj < php-5.3.0.tar.bz2
 
-	(cd php-5.3.0 && ./configure --enable-mbstring --with-ldap=$(HOME) --with-mysql --with-pdo-mysql --with-zlib)
+	(cd php-5.3.0 && ./configure --prefix=$(HOME) --enable-mbstring --with-ldap=$(HOME) --with-mysql --with-pdo-mysql --with-zlib)
 
 	$(MAKE) -C php-5.3.0
 	cp php-5.3.0/sapi/cli/php $(HOME)/bin
